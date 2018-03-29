@@ -1,0 +1,100 @@
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<!-- APP ASIDE ==========-->
+<aside class="app-aside top light in" id="app-aside">
+	<div class="container-fluid">
+		<!-- aside-menu -->
+		<div class="aside-menu-wrapper">
+			<div class="visible-xs-inline-block" id="aside-top-menu-toggle">
+				<button type="button" class="hamburger hamburger--spin js-hamburger" self-toggle="is-active" data-class="open" data-target="#aside-top-menu" data-toggle="class" data-active="false">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
+			</div>
+			<ul id="aside-top-menu" class="sf-menu aside-menu aside-top-menu sf-js-enabled sf-arrows">
+					<li>
+							<a class="menu-link sf-with-ul" routerLink="/new">
+								<span class="menu-icon"><i class="fa fa-user"></i></span>
+								<span class="menu-text">New</span>
+							</a>
+			      </li>				
+
+				<li>
+					<a class="menu-link sf-with-ul" href="javascript:void(0)">
+						<span class="menu-icon"><i class="fa fa-edit"></i></span>
+						<span class="menu-text">Quote Register</span>
+					</a>	
+					<ul>
+						<li><a routerLink="/existing">Existing Quote</a></li>
+						<li><a routerLink="/lapsedquotes">lapsed Quote</a></li>
+						<li><a routerLink="/rejectedquotes">Rejected Quote</a></li>
+					</ul>
+				</li><!-- .menu-item -->
+
+				<li>
+					<a class="menu-link sf-with-ul" href="javascript:void(0)">
+						<span class="menu-icon"><i class="fa fa-wrench"></i></span>
+						<span class="menu-text">Portfolio</span>
+					</a>	
+					<ul>
+						<li><a routerLink="/poilcies">Policies</a></li>
+						<li><a routerLink="/portofilCancelled">Cancelled Policies</a></li>
+				 </ul>
+				</li><!-- .menu-item -->
+
+				<li>
+					<a class="menu-link sf-with-ul" href="javascript:void(0)">
+						<span class="menu-icon"><i class="fa fa-sticky-note"></i></span>
+						<span class="menu-text">Referral Quote</span>
+					</a>
+					<ul>
+						<li><a routerLink="/Referral">Referral Approved</a></li>
+						<li>
+							<a routerLink="/referralunapproved" class="sf-with-ul">
+								<span>Referral UnApproved</span>
+								<span class="menu-caret"><i class="fa fa-angle-right"></i></span>
+							</a>
+							<ul>
+								<li><a routerLink="/referralrejected">Referral Rejected</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li><!-- .menu-item -->
+
+				<li>
+					<a routerLink="/customer" class="menu-link sf-with-ul" href="javascript:void(0)">
+						<span class="menu-icon"><i class="fa fa-users"></i></span>
+						<span class="menu-text">Customer</span>
+					</a>
+				</li><!-- .menu-item -->
+				<li>
+					<a class="menu-link sf-with-ul" href="javascript:void(0)">
+						<span class="menu-icon"><i class="fa fa-database"></i></span>
+						<span class="menu-text">Reports</span>
+					</a>
+					<ul>
+						<li><a routerLink="/report">Reports</a></li>
+						
+					</ul>
+				</li><!-- .menu-item -->
+
+				<li>
+					<a routerLink="/copy" class="menu-link sf-with-ul" href="javascript:void(0)">
+						<span class="menu-icon"><i class="fa fa-clone" aria-hidden="true"></i></span>
+						<span class="menu-text">Copy Quote</span>
+					</a>
+				</li><!-- .menu-item -->
+				<li>
+						<a routerLink="/srch" class="menu-link sf-with-ul" href="javascript:void(0)">
+							<span class="menu-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+							<span class="menu-text">Search</span>
+						</a>
+					</li><!-- .menu-item -->
+			</ul>
+		</div>
+		<!-- /aside-menu -->
+	</div>
+</aside>
+<!--========== END app aside -->

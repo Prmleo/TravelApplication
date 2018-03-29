@@ -1,0 +1,141 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<app-nav-bar></app-nav-bar>
+
+<br><br><br><br><br><br><br><br><br>
+
+<form class="form-horizontal" method="post" #frm='ngForm'>
+    <div class="container-fluid" id="panel">
+        <div class="panel panel-primary">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title">Show entry</h3>
+            </div>
+            <div class="panel-body">
+                <!-- <form action="/action_page.php" [formGroup]="myFormObject" (ngSubmit)="submit(myFormObject.value, myFormObject.valid)">         -->
+                <form [formGroup]="myFormObject" >
+                    <div class="row">
+                        <div class="col-sm-6">
+                             <label id="show">Show</label>
+                                 <select name="dataTable-length" aria-controls="dataTable" class="form-control input-sm" id="head">
+                                   <option value="10">10</option>
+                                   <option value="20">20</option>
+                                   <option value="30">30</option>
+                                 </select>
+                                 <label id="entry">
+                                 entries
+                             </label>
+                        </div>
+                        <div class="col-sm-6">
+                             <div id="example-filter" class="dataTables_filter">
+                                <label></label>
+                                 <input type="search" id="example" class="form-control input-sm" placeholder="Search Your Name..." aria-controls="example">
+                             </div>
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                          <tr class="active">
+                            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="S.No:activate to sort column descending" style="width:131px;">
+                                S.No </th>
+                            <th>Quote No</th>
+                            <th>Customer Name</th>
+                            <th>Quote Date</th>
+                            <th>validity Date</th>
+                            <th>Premimum</th>
+                            <th>Edit</th>
+                            <th>Reject</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6" id="type">
+                               <div class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+                        </div>
+                   <div class="col-sm-6">
+                    <ul class="pagination pagination-lg" id="button">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                      </ul>
+                   </div>
+                   </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+    </form>
+
+<!-- <main class="app-main in" id="app-main">
+        <div class="container-fluid">
+            <div class="wrap">
+                <form role="form" #frm="ngForm"> 
+                <section class="app-content">
+                    <div class="row list_view" style="display:block">
+                        <div class="col-md-12">
+                            <div class="widget p-lg">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <h4 class="m-b-lg">Show entry</h4>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="input-group">
+                                            <input type="text" name="SelectedName" class="form-control"
+                                             id="inputPassword3" placeholder="Search Outlet" required 
+                                             [(ngModel)]='SelectedName'>
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-danger" type="submit" 
+                                                (click)='loadOutletRegistrationByName(SelectedName)'>
+                                                <i class="fa fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>		
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <th>S.No</th>
+                                            <th>Quote No</th>
+                                            <th>Customer Name</th>
+                                            <th>Quote Date</th>
+                                            <th>validity Date</th>
+                                            <th>Premimum</th>
+                                            <th>Edit</th>
+                                            <th>Reject</th>
+                                        </tr>
+                                        <tr *ngFor="let card of cardNumbers"> 
+                                            <td>{{card.cardNumber}}</td> 
+                                            <td>{{card.encryptCardno}}</td> 
+                                            <td>{{card.referenceNumber}}</td> 							 
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                </form>
+            </div>
+        </div>
+    </main>
+        
+     -->

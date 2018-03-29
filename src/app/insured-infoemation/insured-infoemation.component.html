@@ -1,0 +1,566 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<script type="text/javascript">
+    $('#mydob').datepicker({
+        //todayBtn: "linked",
+        //language: "it",
+        autoclose: true,
+        todayHighlight: true,
+        dateFormat: 'dd/mm/yyyy' 
+    });
+
+    $('#datepicker').datetimepicker({                            
+                  allowInputToggle: true
+          });
+ </script>
+ 
+<form [formGroup]="myFormObject">
+    <br>
+    <br>
+
+    <form [formGroup]="myFormObject">
+        <div class="container-fluid" id="insuredInfo">
+            <div class="panel panel-primary">
+                <div class="panel-heading clearfix" id="head">
+                    <h3 class="panel-title">Insured Information   <i style="position:relative;left:900px;">QuoteNumber: {{QuatationNumber}}</i>  </h3>
+                </div>
+                <div class="panel-body">
+                    <form action="/action_page.php" [formGroup]="myFormObject">
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="name" class="control-label">Tittle</label>
+                                <select id="tittleSelect" value="select" class="form-control" formControlName="cusNameEnglishHeader" placeholder="select tittle" style="height:35px;" [(ngModel)]="leo">
+                                    <option>
+                                        <b>Mr</b>
+                                    </option>
+                                    <option>
+                                        <b>Mrs</b>
+                                    </option>
+                                    <option>
+                                        <b>Dr</b>
+                                    </option>
+                                    <option>
+                                        <b>M/s</b>
+                                    </option>
+                                    <option>
+                                        <b>Miss</b>
+                                    </option>
+                                    <option>
+                                        <b>Ms</b>
+                                    </option>
+                                </select>
+                            </div>
+                            <div id="nameTabel" class="col-sm-4">
+                                <label for="name" class="control-label">
+                                    <b>CustomerName(English)
+                                        <font color="red" size="4">
+                                            <b>*</b>
+                                        </font>
+                                    </b>
+                                </label>
+                                <input type="text" tooltip="Enter Your valuable Name" class="form-control" name="cusNameEnglish" formControlName="cusNameEnglish" [(ngModel)]="usrName" id="name">
+                            </div>
+                            <div id="nameEnglish1Err" *ngIf="!cusNameEnglish.valid && cusNameEnglish.touched">
+                                <p id="cusNameEngErr" *ngIf="cusNameEnglish.hasError('required')">
+                                    <font color="red">{{errs.englishName}}</font>
+                                </p>
+                                <p id="cusNameEngErr" *ngIf="cusNameEnglish.hasError('noSpace')">
+                                    <font color="red">{{errs.nameNoSpace}} </font>
+                                </p>
+                                <p id="cusNameEngErr" *ngIf="cusNameEnglish.hasError('noNumber')" tooltip="{{errs.nameNoNumber}}">
+                                    <font  color="red">{{errs.nameNoNumber}}</font>
+                                </p>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="name" class="control-label">
+                                    <b>CustomerName(Arabic)</b>
+                                </label>
+                                <input type="text" name="cusNameArabic" formControlName="cusNameArabic" [(ngModel)]="usrNameArabic" class="form-control"
+                                    id="name">
+                            </div>
+                            <div id="customerNameArabic1Err" *ngIf="!cusNameArabic.valid && cusNameArabic.touched">
+                                <p id="customerNameErr" *ngIf="cusNameArabic.hasError('required')">
+                                    <font color="red">{{errs.arabicName}}</font>
+                                </p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label for="name" class="control-label">
+                                    <b>NationalId/Qama
+                                        <font color="red" size="4">
+                                            <b>*</b>
+                                        </font>
+                                    </b>
+                                </label>
+                                <input type="text" tooltip="provide Your Id" name="NationalId" formControlName="NationalId" [(ngModel)]="usrNationId" class="form-control" id="name">
+                            </div>
+                            <div id="National1Err" *ngIf="!NationalId.valid && NationalId.touched">
+                                <p id="NationalErr" *ngIf="NationalId.hasError('required')">
+                                    <font color="red"> {{errs.nationalId}}</font>
+                                </p>
+                                <p id="nameEnglish1Err" *ngIf="NationalId.hasError('maxlength')">
+                                    <font color="red">{{errs.idLength}} </font>
+                                </p>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="name" class="control-label">
+                                    <b>Email
+                                        <font color="red" size="4">
+                                            <b>*</b>
+                                        </font>
+                                    </b>
+                                </label>
+                                <input type="text" tooltip="Your in secured place feel free to provide your mail" name="mail" formControlName="mail" class="form-control" id="name">
+                            </div>
+                            <div id="mail1Err1" *ngIf="!mail.valid && mail.touched">
+                                <p id="mailErr1" *ngIf="mail.hasError('required')">
+                                    <font color="red">{{errs.mailId}} </font>
+                                </p>
+                                <p id="mailErr" *ngIf="mail.hasError('noMail')">
+                                    <font color="red">{{errs.validMail}} </font>
+                                </p>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="name" class="control-label">
+                                    <b>Mobile No
+                                        <font color="red" size="4">
+                                            <b>*</b>
+                                        </font>
+                                    </b>
+                                </label>
+                                <input type="text" name="Mobile" value=05 formControlName="Mobile" class="form-control" id="name">
+                            </div>
+                            <div id="mobile1Err1" *ngIf="!Mobile.valid && Mobile.touched">
+                                <p id="mobileErr" *ngIf="Mobile.hasError('required')">
+                                    <font color="red">{{errs.mobilNumber}} </font>
+                                </p>
+                                <p id="mobileErr" *ngIf="Mobile.hasError('minlength')">
+                                    <font color="red">{{errs.minimumLength}} </font>
+                                </p>
+                                <p id="mobileErr" *ngIf="Mobile.hasError('maxlength')">
+                                    <font color="red">{{errs.maximumLength}} </font>
+                                </p>
+                                <p id="mobileErr" *ngIf="Mobile.hasError('noMobil')">
+                                    <font color="red">{{errs.countryCode}} </font>
+                                </p>
+                                <p id="mobileErr" *ngIf="Mobile.hasError('noMobStr')">
+                                    <font color="red">{{errs.onlyNumeric}} </font>
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- second tabel -->
+        <div class="container-fluid" id="personInsure">
+            <div class="panel panel-primary">
+                <div class="panel-heading clearfix" id="head">
+                    <h3 class="panel-title">Person To Insured</h3>
+                </div>
+                <div class="panel-body">
+                    <form action="/action_page.php" [formGroup]="myFormObject">
+
+                        <table class="table table-bordered">
+
+                            <thead>
+                                <tr class="active">
+                                    <th>S.No</th>
+                                    <th>Passenger Name(English)
+                                        <font color="red" size="4">
+                                            <b>*</b>
+                                        </font>
+                                    </th>
+                                    <th>Passenger Name(Arabic)
+                                        <font color="red" size="4">
+                                            <b>*</b>
+                                        </font>
+                                    </th>
+                                    <th>Date Of Birth
+                                        <font color="red" size="4">
+                                            <b>*</b>
+                                        </font>
+                                    </th>
+                                    <th>Gender
+                                        <font color="red" size="4">
+                                            <b>*</b>
+                                        </font>
+                                    </th>
+                                    <th>Relations
+                                        <font color="red" size="4">
+                                            <b>*</b>
+                                        </font>
+                                    </th>
+                                    <th>Nationality
+                                        <font color="red" size="4">
+                                            <b>*</b>
+                                        </font>
+                                    </th>
+                                    <th>lqama No/National Id</th>
+                                    <th>Passport Number</th>
+                                    <th>Passport Expiry Date</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="" id="myinputs" style="width:50px;" formControlName="Sno" value="{{sno}}" class="form-control"
+                                        /> </td>
+                                    <td>
+                                        <input type="text1" value="{{usrName}}" name="name" formControlName="passengerName" class="form-control"
+                                            [(ngModel)]="name" id="myinputs">
+                                    </td>
+                                    <td>
+                                        <input type="text1" name="name" value="{{usrNameArabic}}" formControlName="passengerNameArabic"
+                                            class="form-control" id="myinputs">
+                                    </td>
+                                    <td>
+                                        <input id="mydob" placeholder="MM/DD/YYYY" formControlName="myDob" class="form-control" type="text"  
+                                        bsDatepicker format="dd/mm/yyyy" name="appo_date" (click)="dateControls()"
+                                        />
+                                    </td>
+                                    <td>
+                                        <select id="myinputs" style="height:35px;width:95px;" class="form-control" formControlName="myGender">
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select *ngIf="!morePerson" id="myinputs" value="self" style="height:35px;width:100px;" formControlName="myRelation" class="form-control">
+                                            <option>Self</option>
+                                        </select>
+                                        <select id="myinputs" *ngIf="morePerson" style="height:35px;width:100px;" formControlName="myRelation" class="form-control">
+                                            <option *ngFor="let rel of relationArray">{{rel.CODEDESC}}</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select formControlName="myNation" id="myinputs" style="width:120px;height:35px;" class="form-control">
+                                            <option *ngFor="let nation of nationArr">{{nation.CODEVALUE}}</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text1" formControlName="NationalId" value="{{usrNationId}}" name="name"
+                                            class="form-control" id="myinputs">
+                                    </td>
+                                    <td>
+                                        <input type="text1" formControlName="passName" name="name" class="form-control" id="myinputs">
+                                    </td>
+                                    <td>
+                                        <input id="mydob" placeholder="MM/DD/YYYY" formControlName="passExpireDate" class="form-control" bsDatepicker
+                                            type="text" />
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <br>
+                        <div *ngIf="!passengerName.valid && passengerName.touched">
+                            <p *ngIf="passengerName.hasError('required')" style="width:200px;">
+                                <font color="red"> please fill the name in english</font>
+                            </p>
+                            <p *ngIf="passengerName.hasError('noSpace')">
+                                <font color="red">Name Should not have space</font>
+                            </p>
+                            <p *ngIf="passengerName.hasError('noNumber')">
+                                <font color="red"> Name Should not have Number</font>
+                            </p>
+                        </div>
+                        <div *ngIf="!passengerNameArabic.valid && passengerNameArabic.touched">
+                            <p *ngIf="passengerNameArabic.hasError('required')">
+                                <font color="red">please fill the arabic name</font>
+                            </p>
+                        </div>
+                        <div *ngIf="!NationalId.valid && NationalId.touched">
+                            <p *ngIf="NationalId.hasError('required')">
+                                <font color="red"> please enter the national id</font>
+                            </p>
+                            <p *ngIf="NationalId.hasError('maxlength')">
+                                <font color="red"> National Id Should not more than 18 character</font>
+                            </p>
+                        </div>
+                        <div *ngIf="!passName.valid && passName.touched">
+                            <p *ngIf="passName.hasError('required')">
+                                <font color="red"> please fill the passport Number</font>
+                            </p>
+                            <p id="pasportErr" *ngIf="passName.hasError('passNumber')">
+                                <font color="red"> please enter the valid Passport number</font>
+                            </p>
+                        </div>
+                        <br>
+                        <button type="button" class="btn btn-success" (click)="incrementSno()" id="button">Add More</button>
+                        <button type="button" class="btn btn-danger" id="button">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--thired tabel-->
+        <div class="container-fluid" id="travelCover">
+            <div class="panel panel-primary">
+                <div class="panel-heading clearfix" id="head">
+                    <h3 class="panel-title">TRAVEL COVERS</h3>
+                </div>
+                <div class="panel-body">
+                    <form action="/action_page.php" [formGroup]="myFormObject">
+                        <br>
+                        <label *ngFor="let cover of TravelCoverLists" class="radio-inline">
+                            <input type="radio" name="optradio" value="1" (change)="sendTravelcover(cover.CODE)">
+                            <b>{{cover.CODEDESC}}</b>
+                        </label>
+                        <br>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid" id="travelPeriod">
+            <div class="panel panel-primary">
+                <div class="panel-heading clearfix" id="head">
+                    <h3 class="panel-title">TRAVEL PERIOD</h3>
+                </div>
+                <div class="panel-body">
+
+                    <form [formGroup]="myFormObject">
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="control-label">
+                                    <b>Cover Period</b>
+                                    <font color="red" size="4">
+                                        <b>*</b>
+                                    </font>
+                                </label>
+                                <!-- <input type="text1" name="name" class="form-control" id="name"> -->
+                                <select id="days" style="height:35px;" name="coverPeriod" formControlName="MycoverPeriod" [(ngModel)]="coverPeriod" class="form-control">
+                                    <option *ngFor="let cover of TravelPeriodLists">{{cover.CODEDESC}}</option>
+                                </select>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label class="control-lable">
+                                    <b>Inception Date</b>
+                                    <font color="red" size="4">
+                                        <b>*</b>
+                                    </font>
+                                </label>
+                                <input id="txtDate" placeholder="MM/DD/YYYY" class="form-control" bsDatepicker formControlName="inceptionDate" 
+                                 type="text" />
+                            </div>
+
+                            <div class="col-sm-4">
+                                <label for="name" class="control-label">
+                                    <b>Expiry Date</b>
+                                    <font color="red" size="4">
+                                        <b>*</b>
+                                    </font>
+                                </label>
+                                <input type="text" id="follow_Date" name="name" 
+                                (click)="getdate()" formControlName="expieryDate" bsDatepicker 
+                                class="form-control" value="{{addedDate}}"  >
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </form>
+<script>
+    
+</script>
+    <div id="last" hidden="true" class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading clearfix">
+                    <h3 class="panel-title">Premium Information
+                        <span class="badge"></span>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div *ngFor="let info of premiumInfoArry" style="position: relative;width:450px;float:right;padding:30px;right:30px;" class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-danger">
+                                <div class="panel-heading clearfix">
+                                    <h3 class="panel-title">{{info.scheme_name}} &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+                                        <button style="height:32px;" class="btn btn-success" (click)="popupclick(info.scheme_id)">View cover</button>&nbsp; &nbsp; &nbsp; Sar &nbsp; &nbsp; &nbsp; {{info.premium}}
+                                    </h3>
+                                </div>
+
+                                <!-- <popup>
+                                                                    hi da how r u
+                                                                </popup> -->
+                                <div class="panel panel-warning">
+                                    <div class="panel-heading clearfix">
+                                        <i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Basic Premium&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+                                        {{info.premium}}
+
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    &nbsp;&nbsp; &nbsp; &nbsp;
+                                    <button class="btn btn-success" (click)="MoveNextPage(info.scheme_name,info.scheme_id)">Buy Policy</button>
+                                    <button class="btn btn-info">Email Quote</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div *ngIf="!passengerName.valid && QuatationNumber==null" style="position:relative;left:600px;">
+        <button id="calculbutton" class="btn btn-success">Calculate</button>
+        <p>
+            <font color="red">please fill all the details and click Calculate</font>
+        </p>
+        *ngIf="passengerName.valid || QuatationNumber!=null" put this line in below calculate
+    </div> -->
+
+
+    <button id="calculbutton" style="position:relative;left:600px;"  class="btn btn-success"
+        type="submit" (click)="submit(myFormObject.value, myFormObject.valid)">Calculate</button>
+</form>
+
+
+<div hidden="true" class="container-fluid" id="schme">
+    <div class="panel panel-primary">
+        <div class="panel-heading clearfix" id="head">
+            <h3 class="panel-title">View Cover</h3>
+        </div>
+        <div class="panel-body">
+
+            <form action="/action_page.php">
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="active">
+                            <th>Covers</th>
+                            <th>Scheme(SAR)</th>
+
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let schme of SchemeCover">
+                        <tr>
+                            <td>{{schme.clauses_description}}</td>
+                            <td>{{schme.value}}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+                <button class="btn btn-warning" (click)="showAll()" style="position: relative; left:1000px;">OK</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- this date format with control
+    <input type="text" placeholder="DD/MM/YYYY" bsDatepicker/>
+<input type="date" ng-model="StartDate" name="StartDate" required min="{{today}}" />
+------------------------------------------------------------------------------------------
+
+<input type="date"  name="appo_date" id="mydob" ng-model="appoint_data.appo_date"  (click)="dateControls()"
+          ng-required="true" close-text="Close" uib-datepicker-popup="dd-MMMM-yyyy"  required>  -->
+<!-- <img id="planeImg"[@myAwesomeAnimation]='state' (mousemove)="animateMe()" src="assets/Images/plane.jpg">
+
+                        <form class="form-horizontal" action="" [formGroup]="myFormObject" (ngSubmit)="submit(myFormObject.value, myFormObject.valid)" role="form">
+                            <div id="total1"> 
+                                    <p id="head1"class="panel-title text-center" ><font top="30px;" color="white"><i class="fa fa-sign-in" aria-hidden="true"></i>INSURED INFORMATION</font></p>
+                            
+                                    <div id="tittle1"  style="margin-bottom: 25px; top:20px;" class="input-group col-sm-offset-1 col-sm-7">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user">Tittle</i></span>
+                                            <select value="select" class="form-control" formControlName="cusNameEnglishHeader" style="height:35px;"   class="form-control">
+                                                <option>Mr</option>
+                                                <option >Mrs</option>
+                                                <option >Dr</option>
+                                                <option >M/s</option>
+                                                <option >Miss</option>
+                                                <option >Ms</option>
+                                              </select>  
+                                                                                                             
+                                    </div>    
+                                <div id="nameEnglish1"  class="input-group col-sm-offset-1 col-sm-7">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user">CustomerName(English)</i></span>
+                                    <input type="text" class="form-control" name="cusNameEnglish" formControlName="cusNameEnglish" value="" placeholder="Ex:abcd">  
+                                </div>
+                            <div id="nameEnglish1Err" *ngIf="!cusNameEnglish.valid && cusNameEnglish.touched"  >
+                                <p id="cusNameEngErr" *ngIf="cusNameEnglish.hasError('required')" >
+                                  <font  color="red" >{{errs.englishName}}</font>
+                                </p>
+                                <p id="cusNameEngErr" *ngIf="cusNameEnglish.hasError('noSpace')" >
+                                    <font  color="red" >{{errs.nameNoSpace}} </font>
+                                </p>
+                                <p id="cusNameEngErr" *ngIf="cusNameEnglish.hasError('noNumber')" >
+                                    <font  color="red" >{{errs.nameNoNumber}}</font>
+                                </p>
+                            </div> 
+                            <div id="customerNameArabic1" style="margin-bottom: 25px" class="input-group col-sm-offset-1 col-sm-7">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user">customerName(Arabic)</i></span>
+                                <input  class="form-control"  value="" name="cusNameArabic" formControlName="cusNameArabic" placeholder="Ex:عالي " >  
+                            </div>
+                            <div id="customerNameArabic1Err" *ngIf="!cusNameArabic.valid && cusNameArabic.touched"  >
+                                <p id="customerNameErr" *ngIf="cusNameArabic.hasError('required')" >
+                                  <font color="red" >{{errs.arabicName}}</font>
+                                </p>
+                            </div> 
+                            <div id="National1" style="margin-bottom: 25px" class="input-group col-sm-offset-1 col-sm-7">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign">National ID / Iqama</i></span>
+                                <input class="form-control" value="" name="NationalId" formControlName="NationalId"  placeholder="Ex:45763764" >
+                            </div>
+                            <div id="National1Err" *ngIf="!NationalId.valid && NationalId.touched"  >
+                                <p id="NationalErr" *ngIf="NationalId.hasError('required')" >
+                                    <font  color="red" > {{errs.nationalId}}</font>
+                                </p>
+                                <p id="NationalErr" *ngIf="NationalId.hasError('maxlength')" >
+                                    <font  color="red" >{{errs.idLength}} </font>
+                                </p>
+                              </div>   
+                            <div id="mail1" style="margin-bottom: 25px" class="input-group col-sm-offset-1 col-sm-7">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope">E-mail</i></span>
+                                <input  class="form-control"  value="" name="mail" formControlName="mail" placeholder="Ex:abcd@gmail.com" >
+                            </div>
+                            <div id="mail1Err1" *ngIf="!mail.valid && mail.touched"  >
+                                <p id="mailErr1" *ngIf="mail.hasError('required')" >
+                                    <font  color="red" >{{errs.mailId}} </font>
+                                </p>
+                                <p id="mailErr" *ngIf="mail.hasError('noMail')" >
+                                    <font  color="red" >{{errs.validMail}} </font>
+                                </p>
+                            </div> 
+                            <div id="mobile1" style="margin-bottom: 25px" class="input-group col-sm-offset-1 col-sm-7">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone">mobile No</i></span>
+                                <input  class="form-control" value="05" name="Mobile" formControlName="Mobile" placeholder="Ex:059123456789" >
+                            </div>
+                            <div id="mobile1Err1" *ngIf="!Mobile.valid && Mobile.touched"  >
+                                <p id="mobileErr" *ngIf="Mobile.hasError('required')" >
+                                    <font  color="red" >{{errs.mobilNumber}} </font>
+                                </p>
+                                <p id="mobileErr" *ngIf="Mobile.hasError('minlength')" >
+                                    <font  color="red" >{{errs.minimumLength}} </font>
+                                </p>
+                                <p id="mobileErr" *ngIf="Mobile.hasError('maxlength')" >
+                                    <font  color="red" >{{errs.maximumLength}} </font>
+                                </p>
+                                <p id="mobileErr" *ngIf="Mobile.hasError('noMobil')" >
+                                    <font  color="red" >{{errs.countryCode}} </font>
+                                </p>
+                                <p id="mobileErr" *ngIf="Mobile.hasError('noMobStr')" >
+                                    <font  color="red" >{{errs.onlyNumeric}} </font>
+                                </p>
+                              </div> 
+                             
+                              </div>
+                        </form> -->

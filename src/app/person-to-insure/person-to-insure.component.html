@@ -1,0 +1,204 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<app-nav-bar></app-nav-bar>
+<br><br><br><br><br><br><br>
+<app-insured-infoemation></app-insured-infoemation>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<!-- 
+<br>
+<br>
+<br> 
+<form [formGroup]="myFormObject" (ngSubmit)="submit(myFormObject.value, myFormObject.valid)" >
+
+
+
+<div id="total">   
+ <p id="head"class="panel-title text-center" ><font top="30px;" color="white"><i class="fa fa-sign-in" aria-hidden="true"></i>PERSON(S) TO INSURE</font></p>
+ <table>
+    <tr>
+      <th><font size="2px">S.No</font></th>
+      <th > <font size="2px">Passenger Name(English) </font></th>
+      <th><font size="2px">Passenger Name(Arabic)</font></th>
+      <th><font size="2px">Date Of Birth</font></th>
+      <th><font size="2px">Gender</font></th>
+      <th><font size="2px">Relations</font></th>
+      <th><font size="2px">Nationality</font></th>
+      <th><font size="2px">Iqama No/National ID</font></th>
+      <th><font size="2px">PassportNumber</font></th>
+      <th><font size="2px">PassportExpieryDate</font></th>
+      <th><font style="position:relative;right:10px;" size="2px">Delete</font></th>
+    </tr>
+    <tr>
+      <td><input type="" style="width:50px;" formControlName="Sno" value="{{sno}}" class="form-control"/></td>
+      <td><input style="width:135px;" class="form-control"  formControlName="passengerName"/></td>
+      <td><input style="width:135px;" formControlName="passengerNameArabic"   class="form-control"/></td>
+      <td><input placeholder="DD/MM/YYYY" type="date" style="width:170px;"formControlName="myDob" class="form-control"/></td>
+      <td>
+        <select style="height:35px;width:95px;" formControlName="myGender"  class="form-control">
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </td>
+      <td>
+        <select *ngIf="!morePerson" value="self" style="height:35px;width:100px;" formControlName="myRelation"  class="form-control">
+          <option >self</option>
+        </select>
+        <select *ngIf="morePerson" style="height:35px;width:100px;" formControlName="myRelation"  class="form-control">
+            <option *ngFor="let rel of relationArray">{{rel.relationType}}</option>
+        </select></td>
+      <td>
+        <select formControlName="myNation" id="nationality"style="width:120px;"  class="form-control">
+          <option *ngFor="let nation of nationArr" >{{nation.nationalityName}}</option>
+        </select>
+      </td>
+      <td><input style="width:100px;" formControlName="NationalId"   class="form-control"/></td>
+      <td><input style="width:160px;" formControlName="passName" class="form-control"/></td>
+      <td><input type="date" style="width:170px;" formControlName="passExpireDate"  class="form-control"/></td>
+      <td><input style="width:30px;"  class="form-control"/></td>
+    </tr>
+    <br>
+</table>  
+<button class="btn btn-info" (click)="incrementSno()">Add More</button>
+</div>
+<div *ngIf="!passengerName.valid && passengerName.touched"  class="alert alert-danger">
+<p *ngIf="passengerName.hasError('required')" >
+  please fill the name in english
+</p>
+<p *ngIf="passengerName.hasError('noSpace')" >
+  Name Should not have space
+</p>
+<p *ngIf="passengerName.hasError('noNumber')" >
+  Name Should not have Number
+</p>
+</div> 
+<div *ngIf="!passengerNameArabic.valid && passengerNameArabic.touched"  class="alert alert-danger">
+<p *ngIf="passengerNameArabic.hasError('required')" >
+  please fill the arabic name
+</p>
+</div> 
+<div *ngIf="!NationalId.valid && NationalId.touched"  class="alert alert-danger">
+<p *ngIf="NationalId.hasError('required')" >
+please enter the national id
+</p>
+<p *ngIf="NationalId.hasError('maxlength')" >
+National Id Should not more than 18 character
+</p>
+</div> 
+<div *ngIf="!passName.valid && passName.touched"  class="alert alert-danger">
+<p *ngIf="passName.hasError('required')" >
+  please fill the passport Number
+</p>
+<p id="pasportErr" *ngIf="passName.hasError('passNumber')" >
+  please enter the valid Passport number
+</p>
+</div> 
+<div id="total">   
+<p id="head"class="panel-title text-center" ><font top="30px;" color="white"><i class="fa fa-sign-in" aria-hidden="true"></i>TRAVEL COVERS</font></p>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="optradio"/>KSA
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="optradio"/>MIDDLE EAST
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="optradio"/>EUROPE  
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="optradio"/>WORLDWIDE (EXCLUDING USA&CANADA)  
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="optradio"/>WORLDWIDE
+<br><br>
+</div>  
+<div id="total">   
+<p id="head"class="panel-title text-center" ><font top="30px;" color="white"><i class="fa fa-sign-in" aria-hidden="true"></i>Travel Period</font></p>
+<br> <br>
+<label id="day" >Cover Period <font color="red">*</font> :</label>
+<select id="days" style="height:35px;"   class="form-control">
+<option>&nbsp;&nbsp;---Select---</option>
+<option >15 Days</option>
+<option >30 Days</option>
+<option >45 Days</option>
+<option >60 Days</option>
+<option >90 Days</option>
+</select>
+<label id="inseptionDat" >Inception Date <font color="red">*</font> :</label><input id="inseptionDate" class="form-control" type="date" [(ngModel)]="exp"/>
+<label id="coverPrio" >Expiry Date <font color="red">*</font> :</label> <input id="coverPriod" class="form-control" value='{{"myday+exp"}}' type=""/>
+<br><br>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; -->
+<!-- <button class="btn btn-danger" (click)="goback()">Back</button>
+
+<button *ngIf="!passengerName.valid && passengerName.touched" class="btn btn-success"  >Calculate</button>
+
+
+<button *ngIf="passengerName.valid && passengerName.touched" class="btn btn-success" type="submit" (click)="insuredTravel()" >Calculate</button>
+
+</form> -->
+
+ 
+
+
+
+
+  
+
+    
+<!--
+
+<form class="form-horizontal"></form>
+  <div class="table-responsive">
+      
+    <table class="table table-bordered table-striped table-highlight">
+      <thead>
+          <th>S.No</th>
+          <th><font size="1px">PassengerName(English)</font></th>
+          <th>PassengerName(Arabic)</th>
+          <th>Date Of Birth</th>
+          <th>Gender</th>
+          <th>Relations</th>
+          <th>Nationality</th>
+          <th>Iqama No/National ID</th>
+          <th>PassportNumber</th>
+          <th>PassportExpieryDate</th>
+          <th>Delete</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" class="form-control" value="Some Long Name Here" /></td>
+          <td><input  style="width:30px;"/></td>
+          <td><input type="text" class="form-control" value="$12355.12" /></td>
+          <td>
+            <select class="form-control">
+                            <option>Monthly</option>
+                            <option>Yearly</option>
+                        </select>
+          </td>
+          <td><input type="text" class="form-control" value="another long value" /></td>
+          <td><input type="text" class="form-control" value="some val" /></td>
+          <td><input type="text" class="form-control" value="some val" /></td>
+          <td><input type="text" class="form-control" value="some val" /></td>
+          <td>$505.79</td>
+          <td><input type="text" class="form-control" value="some val" /></td>
+          <td><input type="text" class="form-control" value="some val" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</form>-->

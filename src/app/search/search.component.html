@@ -1,0 +1,87 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<app-nav-bar></app-nav-bar>
+<br><br><br><br><br><br><br><br>
+<form>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading clearfix">
+                    <h3 class="panel-title">Search<span class="badge">{{tests.length}}</span></h3>
+                </div>
+                <div class="panel-body">
+                    <div>
+                      <p>
+                        SearchBy:
+                        <select class="form-control" style="width:350px;height:35px;" >
+                          <option>-Select-</option>
+                          <option>Policy No</option>
+                          <option>Quote No</option>
+                          <option>Customer Name</option>
+                        </select>
+                      </p>
+                      <br>
+                      <p style="position:relative;float:right;bottom:80px;">
+                      Search Data:
+                      <input class="form-control" name="searchText" [(ngModel)]="searchText" (click)="showdatas()" style="width:350px" type="string"/>
+                      </p>
+                      <p style="position:relative;float:right;right:100px;bottom:80px;">
+                        Select User/Broker:
+                        <select class="form-control" style="width:350px;height:35px;" >
+                          <option>-All-</option>
+                          <option>SaudiBroker(Broker)</option>
+                        </select>
+                      </p>
+                    </div> 
+                   
+                    <table id="srchTable" hidden="true" class="table table-bordered">
+                        <thead>
+                            <tr class="active">
+                                <th>
+                                    S.No </th>
+                                <th>Quote No</th>
+                                <th>Customer Name</th>
+                                <th>Quote Date</th>
+                                <th>Policy Start Date</th>
+                                <th>Policy Number</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let card of storeArray | filter : searchText; let i = index"> 
+                                <td>{{i+1}}</td>
+                                <td>{{card.QUOTE_NO}}</td>
+                                <td>{{card.CUSTOMER_NAME}}</td>
+                                <td>{{card.QUOTATION_DATE}}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td> <button class="btn btn-info"  style="font-size:15px">
+                                    <i class="fa fa-edit"></i>
+                                </button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+          </div>    
+        </div>
+    </div>
+    <!-- <button class="btn btn-info" data-toggle="tooltip">okok</button>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip({
+        animation:true
+      });
+    })
+      
+    </script> -->
+  </form>
+
+   <!-- <input [(ngModel)]="searchText" placeholder="search text goes here">
+<ul>
+  <li *ngFor="let c of characters | filter : searchText">
+    {{c}}
+  </li>
+</ul>  -->

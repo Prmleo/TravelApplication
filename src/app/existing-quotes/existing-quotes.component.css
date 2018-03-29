@@ -1,0 +1,55 @@
+#panel{
+    position: relative;
+     width: 1420px; 
+   /* padding: 10px; */
+}
+
+
+
+#entry
+{
+  position: relative;
+  left:30px;
+}
+
+#button
+{
+  position: relative;
+  width: 1000px;
+  left:620px;
+  bottom: 20px;
+}
+#type{
+  position: relative;
+  width:500px;
+  left:10px;
+  
+}
+#show
+{
+  position:relative;
+  top:28px;
+}
+#entry
+{
+  position:relative;
+  left:115px;
+  bottom:28px;
+}
+
+#summary {
+  display: block;
+}
+
+#head{
+  position: relative;
+  left: 40px;
+  width: 70px;
+}
+
+#example-filter{
+  position: relative;
+  left: 470px;
+  width: 190px;
+ 
+}

@@ -1,0 +1,171 @@
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<app-nav-bar></app-nav-bar>
+
+<br><br><br><br><br><br><br><br><br>
+
+
+<form id="mainForm" class="form-horizontal" method="post" #frm='ngForm'>
+    <div class="container-fluid" id="panel">
+        <div class="panel panel-info">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title">Referral UnApproved</h3>
+            </div>
+            <div class="panel-body">
+                <!-- <form action="/action_page.php" [formGroup]="myFormObject" (ngSubmit)="submit(myFormObject.value, myFormObject.valid)">         -->
+                <form>
+                    <div class="row">
+                        <div class="col-sm-6">
+                                <label id="show">Show</label>
+                                <select name="dataTable-length" name="arryLength"  [(ngModel)]="arryLength" (change)="reduceArraylist(arryLength)" aria-controls="dataTable" class="form-control input-sm" id="head">
+                                  <option value="10">10</option>
+                                  <option value="20">20</option>
+                                  <option value="30">30</option>
+                                  <option >All</option>
+                                </select>
+                                <label id="entry">
+                                entries
+                            </label>
+                            <div style="position:relative;float:right;bottom:52px;">
+                            Select User/Broker <font color="red">*</font>:
+                            <select placeholder="select" class="form-control" name="selectedUser" [(ngModel)]="selectedUser" (change)="changeUser(selectedUser)" style="width: 200px;height:35px;">
+                                <option>user1</option>
+                                <option>user2</option>
+                            </select>
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div id="example-filter" class="dataTables_filter">
+                                <label></label>
+                                <input type="text" name="searchText" class="form-control" id="inputPassword3" placeholder="Search Your Name" required [(ngModel)]="searchText">
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                                <tr>
+                                        <th>S.No</th>
+                                        <th>Quote No</th>
+                                        <th>Customer Name</th>
+                                        <th>Quote Date</th>
+                                        <th>Edite</th>
+                                        <th>Print</th>
+                                        <th>Reject</th>
+                                    </tr>
+                        </thead>
+                        <tbody>
+                                <tr *ngFor="let card of tempArray | filter : searchText; let i = index"> 
+                                        <td>{{i+1}}</td> 
+                                        <td>{{card.QUOTE_NO}}</td> 
+                                        <td>{{card.CUSTOMER_NAME}}</td> 	  
+                                        <td>{{card.QUOTATION_DATE}}</td>
+                                        <td><button class="btn btn-warning" style="font-size:15px"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>
+                                        <td><button class="btn btn-info" style="font-size:15px"><i class="fa fa-print" aria-hidden="true"></i></button></td>
+                                        <td><button class="btn btn-danger" style="font-size:15px"><i class="fa fa-close" aria-hidden="true"></i></button></td>
+                                    </tr>
+                    </table>
+                    <p *ngIf="!selectedUser&&((tempArray.length)<1)" style="position:relative;left:500px;">
+                        <font color="red"> Please select User/Broker</font>
+                    </p>
+                    <p *ngIf="selectedUser && ((tempArray.length)<1)" style="position:relative; left:550px;"><font color="red">Sorry No data available for {{selectedUser}} </font></p>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6" id="type">
+                            <div class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="pagination pagination-lg" id="button">
+                                <li>
+                                    <a href="#">1</a>
+                                </li>
+                                <li>
+                                    <a href="#">2</a>
+                                </li>
+                                <li>
+                                    <a href="#">3</a>
+                                </li>
+                                <li>
+                                    <a href="#">4</a>
+                                </li>
+                                <li>
+                                    <a href="#">5</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+</form>
+<!-- <main class="app-main in" id="app-main">
+  <div class="container-fluid">
+      <div class="wrap">
+          <form role="form" #frm="ngForm"> 
+          <section class="app-content">
+              <div class="row list_view" style="display:block">
+                  <div class="col-md-12">
+                      <div class="widget p-lg">
+                          <div class="row">
+                              <div class="col-md-8">
+                                  Select User/Broker:
+                                  <select class="form-control" style="width: 200px;height:35px;">
+                                    <option>Select</option>
+                                    <option>user1</option>
+                                    <option>user2</option>
+                                  </select>
+                              </div>
+                              <br><br><br>
+                              <div class="col-md-2">
+                                  <div class="input-group">
+                                    <input type="text" style="position: relative;left:900px;bottom:20px;" name="SelectedName" class="form-control" id="inputPassword3" (change)='loadOutletRegistrationByName(SelectedName)' placeholder="Search Your Name" required [(ngModel)]='SelectedName'>
+                                  </div>
+                              </div>
+                          </div>	
+                          <div id="total">
+                              <p id="head" ><font top="30px;" color="white">show 
+                                <select style="background-color:black">
+                                  <option>10</option>
+                                  <option>25</option>
+                                  <option>50</option>
+                                  <option>All</option>
+                                </select>entries</font>
+                              </p>
+                            <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <th>S.No</th>
+                                            <th>Quote No</th>
+                                            <th>Customer Name</th>
+                                            <th>Quote Date</th>
+                                            <th>Edite</th>
+                                            <th>Print</th>
+                                            <th>Reject</th>
+                                        </tr>
+                                        <tr *ngFor="let card of storeArray; let i = index"> 
+                                            <td>{{i+1}}</td> 
+                                            <td>{{card.QUOTE_NO}}</td> 
+                                            <td>{{card.CUSTOMER_NAME}}</td> 	  
+                                            <td>{{card.QUOTATION_DATE}}</td>
+                                            <td><button class="btn btn-warning" style="font-size:15px"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>
+                                            <td><button class="btn btn-info" style="font-size:15px"><i class="fa fa-print" aria-hidden="true"></i></button></td>
+                                            <td><button class="btn btn-danger" style="font-size:15px"><i class="fa fa-close" aria-hidden="true"></i></button></td>
+                                        </tr>
+                                    </tbody>
+                          </table>
+                          <p *ngIf="((storeArray.length)<1)" style="position:relative;left:500px;">
+                               <font color="red"> Sorry No data Available</font></p>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          </form>
+      </div>
+  </div>
+</main>
+ -->

@@ -1,0 +1,36 @@
+
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <app-nav-bar></app-nav-bar>
+
+    <br><br><br><br><br><br><br>
+<form>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading clearfix">
+                    <h3 class="panel-title">Copy Quote<span class="badge"></span></h3>
+                </div>
+                <div class="panel-body">
+                    <div>
+                      <p style="position:realtive;top:50px;">
+                      SearchBy:
+                      <select class="form-control" style="width:350px;height:35px;" name="searchBy" [(ngModel)]="searchBy" >
+                          <option>-All-</option>
+                          <option>SaudiBroker(Broker)</option>
+                        </select>
+                      </p>
+                      <br>
+                      <p style="position:relative;float:right;bottom:80px;right:480px;">
+                      Enter Data For Search :
+                      <input class="form-control" style="width:350px" name="enteredValue" [(ngModel)]="enteredValue" type="string"/>
+                      </p>
+                     
+                    </div> 
+                    <button style="position:relative;left:900px;bottom:57px;" (click)="getCopyQuote()" class="btn btn-success">Go</button>
+                </div>
+          </div>    
+        </div>
+    </div>
+  </form>

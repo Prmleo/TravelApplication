@@ -1,0 +1,173 @@
+#total
+{
+    position: relative;
+    margin: 50px;
+    top:00px;
+    left:00px;
+    right: 120px;
+    border:solid;
+    bottom: 1000px;
+    
+    background-color: white;
+    width:1273px;
+  
+}
+
+#head
+{
+    position: relative;
+    right:0px;
+    background-color:rgb(63, 108, 204);
+    width:1270px;
+    height: 50px;
+}
+.table-responsive
+{
+    position: relative;
+  
+}
+#nationality
+{
+    position: relative;
+    height: 35px;
+}
+
+table
+{
+    position: relative;
+    right:0px;
+}
+#inseptionDate
+{
+    position: relative;
+    width:250px;
+    float: left;
+    left:60px;
+}
+#coverPriod
+{
+    position: relative;
+    width:250px;
+    float: left;
+    left:100px;
+}
+#days
+{
+    position: relative;
+    
+    float: left; 
+    width: 250px;
+}
+#inseptionDat
+{
+    position: relative;
+   
+    float: left;
+    left:60px;
+}
+#coverPrio
+{
+    position: relative;
+    
+    float: left;
+    left:100px;
+}
+#day
+{
+    position: relative;
+    
+    float: left; 
+    
+}
+#pasportErr
+{
+    position: relative;
+    height: 50px;
+  
+}
+
+#customerName
+{
+    position: relative;
+    left:460px;
+    width:400px;
+    bottom: 60px;
+    
+}
+#nameEnglish
+{
+    position: relative;
+    width:400px;
+}
+#National
+{
+    position: relative;
+    bottom: 60px;
+    width:400px;
+
+}
+#mail
+{
+    position: relative;
+    left:460px;
+    width:400px;
+    bottom: 120px;
+}
+#mobile
+{
+    position: relative;
+    bottom: 120px;
+    width:400px; 
+}
+#mainbox
+{
+    position: relative;
+    right:193px;
+    height: 400px;
+}
+#customerNameErr
+{
+    position: relative;
+    left:600px;
+    width:400px;
+    bottom: 80px;
+}
+#cusNameEngErr
+{
+    position: relative;
+    left:100px;
+    width:200px;
+    bottom: 20px;
+}
+#NationalErr
+{
+    position: relative;
+    bottom: 80px;
+    width:400px;
+    left:100px;
+}
+#mailErr{
+    position: relative;
+    left:600px;
+    width:400px;
+    bottom: 140px;
+}
+#mobileErr
+{
+    position: relative;
+    bottom: 140px;
+    width:400px; 
+    left:100px;
+}
+#planeImg
+{
+    position: relative;
+    height: 200px;
+    width: 400px;
+}
+#mainbox
+{
+    position: relative;
+    right:230px;
+}
+

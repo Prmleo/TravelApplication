@@ -1,0 +1,315 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<app-nav-bar></app-nav-bar>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<form id="frstform" class="form-horizontal" method="post" #frm='ngForm'>
+    <div class="container-fluid" id="panel">
+        <div class="panel panel-primary">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title">Excisting Quote</h3>
+            </div>
+            <div class="panel-body">
+
+                <form>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label id="show">Show</label>
+                            <select name="arryLength" [(ngModel)]="arryLength" (change)="reduceArraylist(arryLength)" class="form-control" id="head">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="All">All</option>
+                            </select>
+                            <label id="entry">
+                                entries
+                            </label>
+                            <div style="position:relative;float:right;bottom:52px;">
+                                Select User/Broker <font color="red">*</font>:
+                                <select class="form-control" name="selectedUser" [(ngModel)]="selectedUser" (change)="changeUser(selectedUser)" style="width: 200px;height:35px;">
+                                    <option>user1</option>
+                                    <option>user2</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div id="example-filter" class="dataTables_filter">
+                                <input type="text" name="searchText" class="form-control" id="inputPassword3" placeholder="Search Your Name" required [(ngModel)]="searchText">
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="active">
+                                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="S.No:activate to sort column descending"
+                                    style="width:131px;">
+                                    S.No </th>
+                                <th>Quote No</th>
+                                <th>Customer Name</th>
+                                <th>Quote Date</th>
+                                <th>validity Date</th>
+                                <th>Premimum</th>
+                                <th>Edit</th>
+                                <th>Reject</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let card of tempArray | filter : searchText;let i = index ">
+                                <td>{{i+1}}</td>
+                                <td>{{card.QUOTE_NO}}</td>
+                                <td>{{card.CUSTOMER_NAME}}</td>
+                                <td>{{card.QUOTATION_DATE}}</td>
+                                <td>{{card.VALIDITY_DATE}}</td>
+                                <td>{{card.PREMIUM}}</td>
+                                <td>
+                                    <button class="btn btn-warning" (click)="showEdite(card.QUOTE_NO)" style="font-size:15px">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger" (click)="showRejectQuote(card)" style="font-size:15px">
+                                        <i class="fa fa-remove"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <p *ngIf="((tempArray.length)<1)&& selectedUser!='user2'" style="position:relative;left:500px;">
+                        <font color="red"> Please select User/Broker</font>
+                    </p>
+                    <p *ngIf="selectedUser=='user2'" style="position:relative; left:550px;"><font color="red">Sorry No data available for {{selectedUser}} </font></p>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6" id="type">
+                            <div class="dataTables_info" role="status" aria-live="polite">Showing {{arryLength}} of {{storeArray.length}} entries</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="pagination pagination-lg" id="button">
+                                <li>
+                                    <a (click)="firstPage()">1</a>
+                                </li>
+                                <li>
+                                    <a (click)="secondPage()">2</a>
+                                </li>
+                                <li>
+                                    <a (click)="thiredPage()">3</a>
+                                </li>
+                                <li>
+                                    <a href="#">4</a>
+                                </li>
+                                <li>
+                                    <a href="#">5</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+</form>
+<br>
+<!--Second form-->
+<form class="form-horizontal" id="secondfrm" hidden="true">
+    <div class="container-fluid" id="panel"  >
+        <div class="panel panel-danger">
+            <div class="panel-heading clearfix">
+                <h3 class="panel-title">Rejected Quote</h3>
+            </div>
+            <div class="panel-body">
+
+                <form id="rejectTable" [formGroup]="myFormObject">
+                    <div class="row">
+                        <div class="col-sm-6">
+
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="active">
+                                <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="S.No:activate to sort column descending"
+                                    style="width:131px;">
+                                    S.No </th>
+                                <th>Quote No</th>
+                                <th>Customer Name</th>
+                                <th>Quote Date</th>
+                                <th>validity Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>{{rejectedData.QUOTE_NO}}</td>
+                                <td>{{rejectedData.CUSTOMER_NAME}}</td>
+                                <td>{{rejectedData.QUOTATION_DATE}}</td>
+                                <td>{{rejectedData.VALIDITY_DATE}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <br> Rejected Quote Reason
+                    <font color="red">
+                        <b>*</b>
+                    </font>
+                    <select id="reason" class="form-control" formControlName="ReasonData" style="width:400px;" name="Reason" [(ngModel)]="Reason">
+                        <option>--Select--</option>
+                        <option>Customer No Response</option>
+                        <option>Customer Not Intrested</option>
+                        <option>Price is too high</option>
+                        <option>Date Barred</option>
+                    </select>
+                    <div id="ReasonErr" *ngIf="!ReasonData.valid && ReasonData.touched">
+                        <p *ngIf="ReasonData.hasError('required')">
+                            <font color="red">Please select the Reason</font>
+                        </p>
+                    </div>
+                    <br>
+                    
+                </form>
+                <p id="messg" style="position: relative;left:500px;" hidden="true" ><font color="red">Your Quote No {{rejectedData.QUOTE_NO}} has been Rejected</font></p>
+                    <button style="position:relative;left:550px;" class="btn btn-danger" (click)="goback()">Back</button>
+                    <button id="re" type="submit" [disabled]="!myFormObject.valid" style="position:relative;left:550px;" class="btn btn-success" (click)="rejectSubmit()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <br>
+</form>
+
+<p>
+        One word in this sentence will have a
+        <span class="glyphicon glyphicon-warning" tooltip="hello">tooltip</span>.
+     </p>
+     <span tooltip="You can have any html or plain text content here">hi da </span>
+
+     
+<input tooltip="{{id}}"/>
+
+<p>
+        One word in this sentence will have a
+        <span tooltip="hello" class="glyphican glyphican-warning" [active]="expression">tooltip</span>.
+     </p>
+     <p>
+            One word in this sentence will have a
+            <span tooltip="hello" tooltipClass="glyphicon glyphicon-warning">tooltip</span>.
+         </p>
+         <p>
+                Only one word in this sentence will have a
+                <span tooltip="hello"  parentSelector=".page">tooltip</span>.
+             </p>
+             -----------------------------------------------------
+            
+<!-- <script>
+    $('.datepicker').datepicker({
+    format: 'mm/dd/yyyy',
+    startDate: '-3d'
+});
+</script>
+
+<input class="datepicker" data-date-format="mm/dd/yyyy">
+<input data-provide="datepicker-inline">
+
+    <div class="input-group date" data-provide="datepicker">
+            <input type="text" class="form-control">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-th"></span>
+            </div>
+        </div>
+-----------------------------------------------------
+        <div class="container">
+                <div class="row">
+                    <div class='col-sm-6'>
+                        <input type='text' class="form-control" id='datetimepicker4' />
+                    </div>
+                    <script type="text/javascript">
+                        $(function () {
+                            $('#datetimepicker4').datetimepicker({
+                    defaultDate: "11/1/2013",
+                    disabledDates: [
+                        moment("12/25/2013"),
+                        new Date(2013, 11 - 1, 21),
+                        "11/22/2013 00:53"
+                    ]
+                });
+                        });
+                    </script>
+                </div>
+            </div>
+            -----------------------------------------------------
+            <div id="datepicker" data-date="12/03/2012"></div>
+<input type="hidden" id="my_hidden_input">
+<script>
+    $('#datepicker').datepicker();
+$('#datepicker').on('changeDate', function() {
+    $('#my_hidden_input').val(
+        $('#datepicker').datepicker('getFormattedDate')
+    );
+});
+</script> -->
+
+<!-- <main class="app-main in" id="app-main">
+    <div class="container-fluid">
+        <div class="wrap">
+            <form role="form" #frm="ngForm"> 
+            <section class="app-content">
+                <div class="row list_view" style="display:block">
+                    <div class="col-md-12">
+                        <div class="widget p-lg">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h4 class="m-b-lg">Show entry</h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <input type="text" name="searchText" class="form-control" 
+                                        id="inputPassword3"  
+                                        placeholder="Search Your Name" required [(ngModel)]="searchText">
+                                        <div class="input-group-btn">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>	
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Quote No</th>
+                                        <th>Customer Name</th>
+                                        <th>Quote Date</th>
+                                        <th>validity Date</th>
+                                        <th>Premimum</th>
+                                        <th>Edit</th>
+                                        <th>Reject</th>
+                                    </tr>
+                                    <tr *ngFor="let card of storeArray | filter : searchText;let i = index "> 
+                                        <td>{{i+1}}</td> 
+                                        <td>{{card.QUOTE_NO}}</td> 
+                                        <td>{{card.CUSTOMER_NAME}}</td> 	  
+                                        <td>{{card.QUOTATION_DATE}}</td>
+                                        <td>{{card.VALIDITY_DATE}}</td>
+                                        <td>{{card.PREMIUM}}</td>
+                                        <td><button class="btn btn-warning" style="font-size:15px"><i class="fa fa-edit"></i></button></td>
+                                        <td><button class="btn btn-danger" style="font-size:15px"><i class="fa fa-remove"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </form>
+        </div>
+    </div>
+</main>
+     -->

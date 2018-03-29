@@ -1,0 +1,52 @@
+#inseptionDate
+{
+    position: relative;
+    width:200px;
+    float: left;
+    left:60px;
+}
+#coverPriod
+{
+    position: relative;
+    width:200px;
+    float: left;
+    left:70px;
+}
+#days
+{
+    position: relative;
+    width:00px;
+    float: left; 
+}
+ #total
+{
+    position: relative;
+    width:1275px;
+    border:solid;
+    border-block-end-color: skyblue;
+    float: left;
+    left:60px;
+
+}
+#head
+{
+    position: relative;
+    right:0px;
+    background-color:rgb(63, 108, 204);
+    width:1270px;
+    height: 30px;
+}
+#hea
+{
+    position: relative;
+    right:0px;
+    background-color:rgb(63, 108, 204);
+    width:1362px;
+    height: 30px;
+}
+#builno
+
+{
+    position: relative;
+    left:500px;
+}

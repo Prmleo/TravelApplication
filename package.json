@@ -21,8 +21,17 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "angular2-tooltips": "^1.0.10",
+    "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
+    "datetimepicker": "^0.1.38",
+    "font-awesome": "^4.7.0",
+    "ng2-datepicker": "^2.2.5",
+    "ng2-opd-popup": "^1.1.21",
+    "ngx-bootstrap": "^2.0.3",
+    "primeng": "^5.2.3",
     "rxjs": "^5.5.6",
+    "tooltip": "^1.6.1",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {

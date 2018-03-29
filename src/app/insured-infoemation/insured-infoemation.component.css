@@ -1,0 +1,304 @@
+
+input[type="text"] {
+  background: transparent;
+  width: 425px;
+  border: none;
+  border-bottom: 1px solid #dbd5d5;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+input[type="text"]:focus{
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#tittleSelect
+{
+    background: transparent;
+  width: 425px;
+  border: none;
+  border-bottom: 1px solid #dbd5d5;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+  position: relative;
+ 
+}
+#myinputs
+{
+    border: none;
+    border-bottom: 1px solid #dbd5d5;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    position: relative;
+}
+#days
+{
+    border: none;
+    border-bottom: 1px solid #dbd5d5;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    position: relative;
+}
+#nameTabel
+{
+    position: relative;
+    bottom:5px;
+}
+#mydob
+{
+    position: relative;
+    width:115px;
+    border: 8;
+   border-top: 4;
+  
+}
+#dlt
+{
+    position:relative;
+    width:2px;
+}
+#head{
+    position: relative;
+   
+}
+
+#button
+{
+  position: relative;
+  left:1100px;
+}
+
+#last
+{
+    position: relative;
+    padding:15px;
+    height:100px;
+}
+
+tooltip 
+{
+    position: relative;
+    top:700px;
+}
+#nameEnglish1Err
+{
+    position: relative;
+    width:500px;
+    left:700px;
+    bottom: 20px;
+}
+#customerNameArabic1Err
+{
+    position: relative;
+    left:1150px;
+    bottom:25px;
+    width:200px;
+}
+#National1Err
+{
+    position: relative;
+    width:200px;
+    left:270px;
+    bottom: 30px; 
+}
+#mail1Err1
+{
+    position: relative;
+    width:200px;
+    left:708px;
+    bottom: 20px;
+}
+#mobile1Err1
+{
+    position: relative;
+    width:500px;
+    left:1100px;
+    bottom: 25px; 
+}
+/*
+#total1
+{
+    position: relative;
+    width:1275px;
+    border:solid;
+    border-block-end-color: skyblue;float: left;
+    margin: 50px;
+    top:00px;
+    left:00px;
+    right: 120px;
+    bottom: 1000px;
+    background-color: white;
+    
+    
+
+}
+#head1
+{
+    position: relative;
+    right:0px;
+    background-color:rgb(63, 108, 204);
+    width:1270px;
+    height: 50px;
+}
+
+#tittle1
+{
+    position: relative;
+    width:500px;
+
+}
+#nameEnglish1
+{
+    position: relative;
+    width:500px;
+    left:600px;
+    bottom: 38px;
+}
+#nameEnglish1Err
+{
+    position: relative;
+    width:500px;
+    left:700px;
+    bottom: 38px;
+}
+#customerNameArabic1
+{
+    position: relative;
+    width:500px;
+}
+#customerNameArabic1Err
+{
+    position: relative;
+    left:100px;
+}
+#National1
+{
+    position: relative;
+    width:500px;
+    left:600px;
+    bottom: 60px; 
+}
+#National1Err
+{
+    position: relative;
+    width:500px;
+    left:750px;
+    bottom: 60px; 
+}
+#mail1
+{
+    position: relative;
+    width:500px;
+    bottom: 50px;  
+}
+#mail1Err1
+{
+    position: relative;
+    left:100px;
+    bottom: 50px;
+}
+#mobile1
+{
+    position: relative;
+    width:500px;
+    left:600px;
+    bottom: 110px; 
+}
+#mobile1Err1
+{
+    position: relative;
+    width:500px;
+    left:750px;
+    bottom: 100px; 
+}
+
+
+
+#customerName
+{
+    position: relative;
+    left:460px;
+    width:400px;
+    bottom: 60px;
+    
+}
+#nameEnglish
+{
+    position: relative;
+    width:400px;
+}
+#National
+{
+    position: relative;
+    bottom: 60px;
+    width:400px;
+
+}
+#mail
+{
+    position: relative;
+    left:460px;
+    width:400px;
+    bottom: 120px;
+}
+#mobile
+{
+    position: relative;
+    bottom: 120px;
+    width:400px; 
+}
+#mainbox
+{
+    position: relative;
+    right:193px;
+    height: 400px;
+}
+#customerNameErr
+{
+    position: relative;
+    left:600px;
+    width:400px;
+    bottom: 80px;
+}
+#cusNameEngErr
+{
+    position: relative;
+    left:100px;
+    width:200px;
+    bottom: 20px;
+}
+#NationalErr
+{
+    position: relative;
+    bottom: 80px;
+    width:400px;
+    left:100px;
+}
+#mailErr{
+    position: relative;
+    left:600px;
+    width:400px;
+    bottom: 140px;
+}
+#mobileErr
+{
+    position: relative;
+    bottom: 140px;
+    width:400px; 
+    left:100px;
+}
+#planeImg
+{
+    position: relative;
+    height: 200px;
+    width: 400px;
+}
+#mainbox
+{
+    position: relative;
+    right:230px;
+}*/

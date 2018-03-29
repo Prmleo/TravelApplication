@@ -1,0 +1,481 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<app-nav-bar></app-nav-bar>
+<br><br><br><br><br><br><br><br><br>
+<!-- Policy Details -->
+<div class="container-fluid" id="panel">
+  <div class="panel panel-primary">
+    <div class="panel-heading clearfix" id="head">
+      <h3 class="panel-title">Policy Details
+        <b style="position: relative;left:900px;"> QuoteNo:{{userDatas.quoteNumber}}</b>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <form>
+        <div class="row">
+          <div class="col-sm-2">
+            <label for="name" class="form-control">
+              <b>Scheme Covers</b>
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <label for="name" class="form-control">
+              {{planeName}}
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <label for="name" class="form-control">
+              <b>Travel Covers</b>
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <label for="name" class="form-control">
+              <b></b>
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <label for="name" class="form-control">
+              <b>Cover Period</b>
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <label for="name" class="form-control">
+              {{userDatas.coverPeriod }} Days
+            </label>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-2">
+            <label for="name" class="form-control">
+              <b>Inception Date</b>
+            </label>
+          </div>
+
+          <div class="col-sm-2">
+            <label for="name" class="form-control">
+              {{userDatas.inceptionDt}}
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <label for="name" class="form-control">
+              <b>Expiry Date</b>
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <label for="name" class="form-control">
+              {{userDatas.inceptionEndDate}}
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <label for="name" class="form-control">
+              <b>Premium</b>
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <input type="text1" name="name" class="form-control" id="name">
+          </div>
+        </div>
+        <br>
+        <table class="table table-bordered">
+          <thead>
+            <tr class="active">
+              <th>S.No</th>
+              <th>Passenger Name(English)</th>
+              <th>Passenger Name(Arabic)</th>
+              <th>Date Of Birth</th>
+              <th>Gender</th>
+              <th>Relations</th>
+              <th>Nationality</th>
+              <th>lqama No/National Id</th>
+              <th>Passport Number</th>
+              <th>Passport Expiry Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <label for="name" class="form-control">
+                  {{userDatas.serialNo}}
+                </label>
+                <td>
+                  <label for="name" class="form-control">
+                    {{userDatas.travelNames}}
+                  </label>
+                </td>
+                <td>
+                  <label for="name" class="form-control">
+                    {{userDatas.travelLastNames}}
+                  </label>
+                </td>
+                <td>
+                  <label style="width:110px;" for="name" class="form-control">
+                    {{userDatas.dobs}}
+                  </label>
+                </td>
+                <td>
+                  <label for="name" class="form-control">
+                    {{customerGender}}
+                  </label>
+                </td>
+                <td>
+                  <label for="name" class="form-control">
+                    {{userDatas.relations}}
+                  </label>
+                </td>
+                <td>
+                  <label for="name" class="form-control">
+                    {{userDatas.nationalitys}}{{customerNationality}}
+                  </label>
+                </td>
+                <td>
+                  <label for="name" class="form-control">
+                    {{userDatas.iqamaNo}}
+                  </label>
+                </td>
+                <td>
+                  <label for="name" class="form-control">
+                    {{userDatas.passportNo}}
+                  </label>
+                </td>
+                <td>
+                  <label for="name" class="form-control">
+                    {{userDatas.passportExpDate}}
+                  </label>
+                </td>
+
+            </tr>
+          </tbody>
+
+        </table>
+        <br>
+
+        <br>
+      </form>
+      <!-- Policy Details Form End  -->
+    </div>
+  </div>
+</div>
+<!--  Policy Details Div End -->
+
+<!-- Insures Information -->
+<div class="container-fluid" id="panel">
+  <div class="panel panel-primary">
+    <div class="panel-heading clearfix" id="head">
+      <h3 class="panel-title">Insured Information</h3>
+    </div>
+    <div class="panel-body">
+      <form action="/action_page.php">
+
+        <div class="row">
+          <div class="col-sm-1">
+            <label class="control-label">
+              <b>Title</b>
+            </label>
+            <label for="name" class="form-control">
+              {{userDatas.title}}
+            </label>
+          </div>
+
+          <div class="col-sm-3">
+            <label class="control-lable">
+              <b>FullName(English)</b>
+            </label>
+            <label for="name" class="form-control">
+              {{userDatas.customerName}}
+            </label>
+          </div>
+          <div class="col-sm-4">
+            <label for="name" class="control-label">
+              <b>Building No</b>
+            </label>
+            <input type="text1" name="name" class="form-control" id="name">
+          </div>
+          <div class="col-sm-4">
+            <label for="name" class="control-label">
+              <b>Cast.additional.No</b>
+            </label>
+            <input type="text1" name="name" class="form-control" id="name">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="name" class="control-label">
+              <b>Occupation</b>
+            </label>
+            <select class="form-control" placeholder="Occupation">
+              <option *ngFor="let occu of Occupations">{{occu.occupationName}}</option>
+            </select>
+          </div>
+          <div class="col-sm-4">
+            <label for="name" class="control-label">
+              <b>Street</b>
+            </label>
+            <input type="text1" name="name" class="form-control" id="name">
+          </div>
+          <div class="col-sm-4">
+            <label for="name" class="control-label">
+              <b>City</b>
+            </label>
+            <select class="form-control" placeholder="City">
+              <option *ngFor="let city of Citys">{{city.citiesName}}</option>
+            </select>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="name" class="control-label">
+              <b>Nationality</b>
+            </label>
+            <label for="name" class="form-control">
+              {{userDatas.nationalitys}}
+            </label>
+          </div>
+          <div class="col-sm-4">
+            <label for="name" class="control-label">
+              <b>Postal Code</b>
+            </label>
+            <input type="text1" name="name" class="form-control" id="name">
+          </div>
+          <div class="col-sm-4">
+            <label for="name" class="control-label">
+              <b>Unit No</b>
+            </label>
+            <input type="text1" name="name" class="form-control" id="name">
+          </div>
+        </div>
+      </form>
+      <!-- Insures Information Form End  -->
+    </div>
+  </div>
+</div>
+<!-- Insures Information Div End  -->
+<br>
+<!--Communication Address -->
+<div class="container-fluid" id="panel">
+  <div class="panel panel-primary">
+    <div class="panel-heading clearfix" id="head">
+      <h3 class="panel-title">Communication Address</h3>
+    </div>
+    <div class="panel-body">
+      <form action="/action_page.php">
+        <div class="row">
+          <div class="col-sm-4" id="type">
+            <b>Address Type:</b>
+            <label class="radio-inline">&nbsp;&nbsp;
+              <input type="radio" name="optradio">
+              <b>Postal Code</b>
+            </label>
+            <label class="radio-inline">&nbsp;
+              <input type="radio" name="optradio">
+              <b>Wasel Address</b>
+            </label>
+          </div>
+          <div class="col-sm-4">
+            <label class="control-lable">
+              <b>Building No</b>
+            </label>
+            <input type="text1" name="name" class="form-control" id="name">
+          </div>
+          <div class="col-sm-4">
+            <label for="name" class="control-label">
+              <b>Additional Number</b>
+            </label>
+            <input type="text1" name="name" class="form-control" id="name">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="name" class="control-label">
+              <b>Postal Code</b>
+            </label>
+            <input type="text1" name="name" class="form-control" id="name">
+          </div>
+          <div class="col-sm-4">
+            <label for="name" class="control-label">
+              <b>City</b>
+            </label>
+            <select class="form-control" placeholder="City">
+              <option *ngFor="let city of Citys">{{city.citiesName}}</option>
+            </select>
+          </div>
+          <div class="col-sm-4">
+            <label for="name" class="control-label">
+              <b>Neighbourdhood</b>
+            </label>
+            <input type="text1" name="name" class="form-control" id="name">
+          </div>
+        </div>
+      </form>
+      <!-- Communication Address Form End  -->
+    </div>
+  </div>
+</div>
+<!-- Communication Address Div End  -->
+<br>
+<!-- Premium Details -->
+<div class="container-fluid" id="panel">
+  <div class="panel panel-primary">
+    <div class="panel-heading clearfix" id="head">
+      <h3 class="panel-title">Premium Details</h3>
+    </div>
+    <div class="panel-body">
+      <form action="/action_page.php">
+        <div class="row">
+          <div class="col-sm-4">
+            <label class="control-lable">
+              <b>Premium</b>
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <label for="name" class="control-label">
+              <b>SAR</b>
+            </label>
+          </div>
+          <div class="col-sm-4">
+            <input type="text1" name="name" class="form-control" id="name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <label class="control-lable">
+              <b>Premium Tax</b>
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <label for="name" class="control-label">
+              <b>SAR</b>
+            </label>
+          </div>
+          <div class="col-sm-4">
+            <input type="text1" name="name" class="form-control" id="name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <label class="control-lable">
+              <b>VAT 5%</b>
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <label for="name" class="control-label">
+              <b>SAR</b>
+            </label>
+          </div>
+          <div class="col-sm-4">
+            <input type="text1" name="name" class="form-control" id="name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <label class="control-lable">
+              <b>Total Premium Payable</b>
+            </label>
+          </div>
+          <div class="col-sm-2">
+            <label for="name" class="control-label">
+              <b>SAR</b>
+            </label>
+          </div>
+          <div class="col-sm-4">
+            <label for="name" class="form-control">
+              {{PremiumDetails.TOTAL_PREMIUM}}
+            </label>
+          </div>
+        </div>
+      </form>
+      <!-- Premium Details Form End  -->
+    </div>
+  </div>
+</div>
+<!-- Premium Details Div End  -->
+<br>
+<!--Summart Of Policy Benefits -->
+<div class="container-fluid" id="panel">
+  <div class="panel panel-primary">
+    <div class="panel-heading clearfix" id="head">
+      <summary id="summary">
+        <h3 class="panel-title">Summary Of Policy Benefits</h3>
+        <h3 class="panel-title" id="head1">Summary Covers:{{planeName}}</h3>
+        <h3 class="panel-title" id="head2"> Travel Covers:EuRope</h3>
+      </summary>
+    </div>
+    <details>
+      <div class="panel-body">
+        <form action="/action_page.php">
+          <table class="table table-bordered">
+            <thead>
+              <tr class="active">
+                <th>Covers</th>
+                <th>Scheme(SAR)</th>
+                <th>Scheme(USD)</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let schme of SchemeCover">
+              <tr>
+                <td>{{schme.clauses_description}}</td>
+                <td>{{schme.value}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+        <!--Summart Form End  -->
+      </div>
+    </details>
+  </div>
+</div>
+<!--Summart Div End  -->
+<br>
+<!-- Declaration -->
+<div class="container-fluid" id="panel">
+  <div class="panel panel-primary">
+    <div class="panel-heading clearfix" id="head">
+      <h3 class="panel-title">Declaration</h3>
+    </div>
+    <div class="panel-body">
+      <form action="/action_page.php">
+        <label class="radio-inline">
+          <input type="radio" name="optradio">&nbsp;
+          <b>Email Quote</b>
+        </label>
+        <br>
+        <br>
+        <label class="radio-inline">
+          <input type="radio" name="optradio">&nbsp;
+          <b>I do hereby declare that the above statement is true to the best of my knowledge and belief, and that I understand
+            it is made for use as evidence in court and is subject to penalty for perjury. I further understand that cover
+            shall only be applicable once my vehicle is inspected and verified by Gulf General Cooperative Insurance Officer
+            and certificate is delivered.
+          </b>
+        </label>
+      </form>
+      <!--Declaration Form End  -->
+    </div>
+  </div>
+</div>
+<!--Declaration Div End  -->
+<!--Debit Account-->
+<div class="container-fluid" id="panel">
+  <div class="panel panel-primary">
+    <div class="panel-heading clearfix" id="head">
+      <h3 class="panel-title">Mode Of Payment</h3>
+    </div>
+    <div class="panel-body">
+      <form action="/action_page.php">
+        <label class="radio-inline">
+          <input type="radio" name="optradio">&nbsp;
+          <b>Debit Account</b>
+        </label>
+        <br>
+        <br>
+      </form>
+      <!--Debit Form End  -->
+    </div>
+  </div>
+</div>
+<!--Debit Form End  -->
+<button class="btn btn-success" style="position:relative;left:650px;">PAY</button>

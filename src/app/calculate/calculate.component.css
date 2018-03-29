@@ -1,0 +1,266 @@
+#panel{
+    position: relative;
+     width: 1350px; 
+   /* padding: 10px; */
+}
+
+input[type="text"]
+ {
+  background: transparent;
+  width: 425px;
+  border: none;
+  border-bottom: 1px solid #dbd5d5;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+input[type="text"]:focus{
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+#head{
+    position: relative;
+    height:35px;
+}
+
+#button
+{
+  position: relative;
+  left:1200px;
+}
+
+#type{
+    position: relative;
+    top:18px;
+    
+  }
+
+  #summary {
+    display: block;
+  }
+  
+  #head1{
+    position: relative;
+    left: 500px;
+    bottom: 18px;
+  }
+  
+  #head2{
+    position: relative;
+    left: 950px;
+    bottom: 34px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #total
+{
+    position: relative;
+    widows: 12000px;
+    top: 60px;
+    right: 150px
+}
+#total1
+{
+    position: relative;
+    widows: 12000px;
+    bottom: 5px;
+    left: 230px;
+}
+
+#total2
+{
+    position: relative;
+    widows: 12000px;
+    bottom: 60px;
+    left: 550px;
+}
+
+#total3
+{
+    position: relative;
+    widows: 12000px;
+    bottom: 120px;
+    left: 920px;
+}
+
+#total4
+{
+    position: relative;
+    widows: 12000px;
+    bottom: 130px;
+    right: 150px
+}
+
+#total5
+{
+    position: relative;
+    widows: 12000px;
+    bottom: 180px;
+    left: 230px
+}
+#total6
+{
+    position: relative;
+    widows: 12000px;
+    bottom: 235px;
+    left: 550px;
+}
+#total7
+{
+    position: relative;
+    widows: 12000px;
+    bottom: 290px;
+    left: 930px;
+}
+#total8
+{
+    position: relative;
+    widows: 12000px;
+    bottom: 420px;
+    left:230px
+}
+
+#total9
+{
+    position: relative;
+    widows: 12000px;
+    bottom: 480px;
+    right: 150px
+}
+
+#total10
+{
+    position: relative;
+    widows: 12000px;
+    bottom: 290px;
+    left: 930px;
+}
+#total11
+{
+    position: relative;
+    widows: 12000px;
+    bottom: 360px;
+    left: 590px;
+}
+#total12
+{
+    position: relative;
+    widows: 12000px;
+    bottom: 360px;
+    right: 150px;
+}
+#divId
+{
+  position: relative;
+  widows: 12000px;
+    bottom: 420px;
+    left: 2px;
+}
+#divId1{
+
+    position: relative;
+    widows: 12000px;
+    bottom: 400px;
+    left: 2px;
+
+}
+#idselect
+{
+   position: relative;
+   width: 210px;
+
+}
+
+#total13
+{
+    position: relative;
+    widows: 12000px;
+    bottom: 480px;
+    left: 590px;
+}
+
+#head21
+{
+    position: relative;
+    right:0px;
+    background-color:rgb(63, 108, 204);
+    width:1270px;
+    height: 50px;
+}
+#premium
+{
+    position: relative;
+    float: right;
+}
+#total0
+{
+    position: relative;
+    margin: 50px;
+    top:00px;
+    border:solid;
+    bottom: 1000px;
+  
+    background-color: white;
+    width:1275px;
+  
+}
+#total01
+{
+    position: relative;
+    margin: 50px;
+    top:00px;
+    border:solid;
+    bottom: 1000px;
+  height:250px;
+    background-color: white;
+    width:1275px;
+  
+}
+#lab
+{
+    position: relative;
+    left:400px;
+}
+#labTax
+{
+    position: relative;
+    left:380px;
+}
+#labVat
+{
+    position: relative;
+    left:415px;
+}
+#labTotal
+{
+    position: relative;
+    left:320px; 
+} */

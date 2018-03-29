@@ -1,0 +1,80 @@
+.row
+{
+    position: relative;
+    padding:30px;
+}
+
+
+/* #head
+{
+    position: relative;
+    right:0px;
+    background-color:rgb(63, 108, 204);
+    width:1212px;
+    height: 50px;
+}
+#scnd
+{
+    position: relative;
+    bottom:50px;
+} */
+#panel{
+    position: relative;
+     width: 1350px; 
+   /* padding: 10px; */
+}
+
+
+
+#entry
+{
+  position: relative;
+  left:30px;
+}
+
+#button
+{
+  position: relative;
+  width: 1000px;
+  left:550px;
+  bottom: 20px;
+}
+#type{
+  position: relative;
+  width:500px;
+  left:10px;
+  
+}
+#show
+{
+  position:relative;
+  top:28px;
+}
+#entry
+{
+  position:relative;
+  left:115px;
+  bottom:28px;
+}
+
+#summary {
+  display: block;
+}
+
+#head{
+  position: relative;
+  left: 40px;
+  width: 70px;
+}
+
+#example-filter{
+  position: relative;
+  left: 450px;
+  width: 190px;
+ 
+}
+#mainForm
+{
+  position:relative;
+  width:500px;
+}
